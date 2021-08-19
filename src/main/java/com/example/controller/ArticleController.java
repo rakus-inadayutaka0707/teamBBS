@@ -51,9 +51,12 @@ public class ArticleController {
 	@RequestMapping("")
 	public String index(Model model) {
 		List<Article> articleList = articleRepository.findAll();
+//		for (Article article : articleList) {
+//			List<Comment> commentList = commentRepository.findByArticleId(article.getId());
+//			article.setCommentList(commentList);
+//		}
 		for (Article article : articleList) {
-			List<Comment> commentList = commentRepository.findByArticleId(article.getId());
-			article.setCommentList(commentList);
+			System.out.println(article);
 		}
 		model.addAttribute("articleList", articleList);
 		return "index";

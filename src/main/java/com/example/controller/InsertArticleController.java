@@ -34,7 +34,7 @@ public class InsertArticleController {
 		Article article = new Article();
 		BeanUtils.copyProperties(form, article);
 		articleRepository.insert(article);
-		return "redirect:/";
+		return "forward:/";
 	}
 
 }
